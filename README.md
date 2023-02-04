@@ -21,9 +21,7 @@ The messages are just sent as unencrypted text, terminated by two newline charac
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+Programmed in Rust 1.65.0 (897e37553 2022-11-02)
 
 # Useful Websites
 
