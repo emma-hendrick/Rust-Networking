@@ -8,7 +8,8 @@ in the directory you've cloned this to. The binaries will be located in target/d
 
 This software was developed in order to gain an understanding of networking in rust. I want to try to write a rust backend framework eventually, and as such, need to understand rust networking functions and how to use them.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Peer Demonstation Video](https://youtu.be/9qPakO4H1mg)
+[Client/Server Demonstration Video](https://youtu.be/7djmEJaKkIA)
 
 # Network Communication
 
@@ -38,3 +39,4 @@ The messages are just sent as unencrypted text, terminated by two newline charac
 * Send some form of test data to ensure the server/peer is responding before sending the actual message
 * Implement some form of encryption!
 * Better error checking/handling
+* Be able to see what IP address sends you a message
