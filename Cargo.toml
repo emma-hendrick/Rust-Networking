@@ -1,0 +1,26 @@
+[package]
+name = "networking"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mongodb = "2.3.0"
+
+[lib]
+name = "mrh_rust_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust_tcp_server"
+path = "src/bin/server.rs"
+
+[[bin]]
+name = "rust_tcp_client"
+path = "src/bin/client.rs"
+
+[[bin]]
+name = "peer"
+path = "src/bin/peer.rs"
+
