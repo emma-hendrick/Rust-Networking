@@ -1,20 +1,22 @@
 # Overview
 
-{Provide a description the networking program that you wrote. Describe how to use your software.  If you did Client/Server, then you will need to describe how to start both.}
+This is a command line texting interface, you enter an IP and a message, and the program will send it. Messages can be sent using the client or peer. The client however, cannot recieve messages. If you have sent the message to a valid server/peer the message will appear on their end.
 
-{Describe your purpose for writing this software.}
+Before running the program you will need to install rust, and run
+`cargo build`
+in the directory you've cloned this to. The binaries will be located in target/debug/(peer/client/server).exe.
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (you will need to show two pieces of software running and communicating with each other) and a walkthrough of the code.}
+This software was developed in order to gain an understanding of networking in rust. I want to try to write a rust backend framework eventually, and as such, need to understand rust networking functions and how to use them.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Network Communication
 
-{Describe the architecture that you used (client/server or peer-to-peer)}
+We have both a client/server and a peer to peer model included in this program!
 
-{Identify if you are using TCP or UDP and what port numbers are used.}
+We are using TCP because we don't want any messages to be dropped.
 
-{Identify the format of messages being sent between the client and server or the messages sent between two peers.}
+The messages are just sent as unencrypted text, terminated by two newline characters.
 
 # Development Environment
 
@@ -24,13 +26,15 @@
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Rust Programming: The Book](https://doc.rust-lang.org/book/)
+* [Building a single-threaded web server in Rust](https://doc.rust-lang.org/book/ch20-01-single-threaded.html)
+* [Changing a single-threaded web server to be multi-threaded in Rust](https://doc.rust-lang.org/book/ch20-02-multithreaded.html)
+
+* NOTE: The reason we could skip part 3 of chapter 20, "Graceful Shutdown and Cleanup", was because we only have the listener operating on a seperate thread, so if a message came in while the program was closing, the final message would simply not be recieved. However, there would be no data malformation, or client handling that was ended abruptly.
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Improved data format, such as sending data using JSON
+* Send some form of test data to ensure the server/peer is responding before sending the actual message
+* Implement some form of encryption!
+* Better error checking/handling
